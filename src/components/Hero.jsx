@@ -108,7 +108,7 @@ const Hero = ({ darkMode }) => {
 
               {/* DOWNLOAD CV */}
               <a
-                href="/CHITTRA_PRIYA_K_FullStack.pdf"
+                href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 border-2 border-orange-500 px-6 py-3 rounded-lg text-orange-500 hover:bg-orange-500 hover:text-white transition"
