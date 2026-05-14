@@ -83,7 +83,7 @@ const Contact = ({ darkMode }) => {
               }`}
             >
               <p className="opacity-80">
-                I’m open to freelance, internships, and full-time opportunities.
+                Seeking full-time opportunities as a Full Stack (MERN) Developer to contribute to scalable web applications and grow professionally.
               </p>
             </div>
           </motion.div>
