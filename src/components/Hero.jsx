@@ -1,8 +1,14 @@
 import { Star, Download } from "lucide-react";
 import instagram from "../assets/instagram.png";
 import github from "../assets/github.png";
-import { SiExpressdotcom, SiMongodb, SiNodedotjs, SiReact, SiTailwindcss } from "react-icons/si";
-import image from '../assets/image2.png'
+import {
+  SiExpressdotcom,
+  SiMongodb,
+  SiNodedotjs,
+  SiReact,
+  SiTailwindcss,
+} from "react-icons/si";
+import image from "../assets/image2.png";
 
 const Hero = ({ darkMode }) => {
   const socialIcons = [
@@ -103,7 +109,8 @@ const Hero = ({ darkMode }) => {
               {/* DOWNLOAD CV */}
               <a
                 href="/CHITTRA_PRIYA_K_FullStack.pdf"
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 border-2 border-orange-500 px-6 py-3 rounded-lg text-orange-500 hover:bg-orange-500 hover:text-white transition"
               >
                 <Download size={18} />
@@ -150,38 +157,44 @@ const Hero = ({ darkMode }) => {
           </div>
           {/* Right Column - Image + Floating Icons */}
           <div className="flex justify-center items-center">
+            <div className="relative w-[320px] md:w-[400px] aspect-square">
+              {/* OUTER ROTATING BORDER RING */}
+              <div className="absolute -inset-[3px] rounded-none animate-spin">
+                <div className="w-full h-full bg-[conic-gradient(from_0deg,transparent,orange,transparent,transparent)]"></div>
+              </div>
 
-  <div className="relative w-[320px] md:w-[400px] aspect-square">
+              {/* INNER MASK (this hides center, keeps only border visible) */}
+              <div className="absolute inset-[3px] bg-white dark:bg-black"></div>
 
-    {/* OUTER ROTATING BORDER RING */}
-    <div className="absolute -inset-[3px] rounded-none animate-spin">
-      <div className="w-full h-full bg-[conic-gradient(from_0deg,transparent,orange,transparent,transparent)]"></div>
-    </div>
+              {/* IMAGE */}
+              <div className="relative rounded-2xl w-full h-full overflow-hidden">
+                <img
+                  src={image}
+                  alt="developer"
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-    {/* INNER MASK (this hides center, keeps only border visible) */}
-    <div className="absolute inset-[3px] bg-white dark:bg-black"></div>
-
-    {/* IMAGE */}
-    <div className="relative rounded-2xl w-full h-full overflow-hidden">
-      <img
-        src={image}
-        alt="developer"
-        className="w-full h-full object-cover"
-      />
-    </div>
-
-    {/* FLOATING ICONS */}
-    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3 bg-white/80 dark:bg-black/50 backdrop-blur px-3 py-2 rounded-full shadow-md z-10">
-      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300"><SiReact className="text-blue-500 text-2xl" /></div>
-      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300"><SiNodedotjs className="text-green-600 text-2xl" /></div>
-      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300"><SiExpressdotcom className="text-orange-600 dark:text-orange-400 text-2xl" /></div>
-      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300"><SiTailwindcss className="text-sky-500 text-2xl" /></div>
-      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300"><SiMongodb className="text-green-500 text-2xl" /></div>
-    </div>
-
-  </div>
-</div>
-          
+              {/* FLOATING ICONS */}
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-3 bg-white/80 dark:bg-black/50 backdrop-blur px-3 py-2 rounded-full shadow-md z-10">
+                <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                  <SiReact className="text-blue-500 text-2xl" />
+                </div>
+                <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                  <SiNodedotjs className="text-green-600 text-2xl" />
+                </div>
+                <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                  <SiExpressdotcom className="text-orange-600 dark:text-orange-400 text-2xl" />
+                </div>
+                <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                  <SiTailwindcss className="text-sky-500 text-2xl" />
+                </div>
+                <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                  <SiMongodb className="text-green-500 text-2xl" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
