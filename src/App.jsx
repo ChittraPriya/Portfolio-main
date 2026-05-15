@@ -7,6 +7,8 @@ import About from './pages/About'
 import Skills from './pages/Skills'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
+import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 
 const App = () => {
   const [darkMode, setDarkMode]  = useState(true);
@@ -33,6 +35,8 @@ const App = () => {
       <Skills darkMode={darkMode} />
       <Projects darkMode= {darkMode} />
       <Contact darkMode={darkMode} />
+      <Footer  darkMode={darkMode}/>
+      <ScrollToTop />
     </div>
   )
 }

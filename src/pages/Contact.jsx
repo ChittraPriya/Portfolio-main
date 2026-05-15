@@ -7,27 +7,27 @@ import toast from "react-hot-toast";
 const Contact = ({ darkMode }) => {
   const form = useRef();
 
- const sendEmail = (e) => {
-  e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  emailjs
-    .sendForm(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      form.current,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    )
-    .then(
-      () => {
-        toast.success("Message sent successfully ✅");
-        form.current.reset();
-      },
-      (error) => {
-        console.log(error);
-        toast.error("Failed to send ❌");
-      }
-    );
-};
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      )
+      .then(
+        () => {
+          toast.success("Message sent successfully ✅");
+          form.current.reset();
+        },
+        (error) => {
+          console.log(error);
+          toast.error("Failed to send ❌");
+        },
+      );
+  };
 
   return (
     <section
@@ -37,7 +37,6 @@ const Contact = ({ darkMode }) => {
       }`}
     >
       <div className="max-w-6xl mx-auto">
-
         {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: -40 }}
@@ -53,8 +52,8 @@ const Contact = ({ darkMode }) => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-10">
-
           {/* LEFT INFO */}
+
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -62,7 +61,12 @@ const Contact = ({ darkMode }) => {
           >
             <div className="flex items-center gap-4">
               <Mail className="text-orange-500" />
-              <p>krcpriya@gmail.com</p>
+              <a
+                href="mailto:krcpriya@gmail.com"
+                className="hover:text-orange-500 transition"
+              >
+                krcpriya@gmail.com
+              </a>
             </div>
 
             <div className="flex items-center gap-4">
@@ -83,7 +87,9 @@ const Contact = ({ darkMode }) => {
               }`}
             >
               <p className="opacity-80">
-                Seeking full-time opportunities as a Full Stack (MERN) Developer to contribute to scalable web applications and grow professionally.
+                Seeking full-time opportunities as a Full Stack (MERN) Developer
+                to contribute to scalable web applications and grow
+                professionally.
               </p>
             </div>
           </motion.div>
@@ -104,7 +110,7 @@ const Contact = ({ darkMode }) => {
             <div className="mb-6">
               <input
                 type="text"
-                name="user_name"   
+                name="user_name"
                 placeholder="Your Name"
                 required
                 className="w-full p-3 rounded-lg bg-transparent border outline-none focus:border-orange-500"
@@ -115,7 +121,7 @@ const Contact = ({ darkMode }) => {
             <div className="mb-6">
               <input
                 type="email"
-                name="user_email"  
+                name="user_email"
                 placeholder="Your Email"
                 required
                 className="w-full p-3 rounded-lg bg-transparent border outline-none focus:border-orange-500"
@@ -125,7 +131,7 @@ const Contact = ({ darkMode }) => {
             <div className="mb-6">
               <input
                 type="number"
-                name="phone"  
+                name="phone"
                 placeholder="Your Phone Number"
                 required
                 className="w-full p-3 rounded-lg bg-transparent border outline-none focus:border-orange-500"
@@ -136,7 +142,7 @@ const Contact = ({ darkMode }) => {
             <div className="mb-6">
               <textarea
                 rows="4"
-                name="message"   
+                name="message"
                 placeholder="Your Message"
                 required
                 className="w-full p-3 rounded-lg bg-transparent border outline-none focus:border-orange-500"

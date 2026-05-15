@@ -54,19 +54,6 @@ const Hero = ({ darkMode }) => {
   return (
     <section className={`min-h-screen flex items-center ${theme.bg}`}>
       <div className="max-w-7xl mx-auto px-6 py-20 w-full">
-        {/* SOCIAL ICONS */}
-        <div className="flex gap-4 mt-8 mb-5">
-          {socialIcons.map((item, i) => (
-            <a
-              key={i}
-              href={item.link}
-              target="_blank"
-              className={`p-2 rounded-full transition hover:scale-110 ${item.hover}`}
-            >
-              <img src={item.icon} alt={item.alt} className="w-6 h-6" />
-            </a>
-          ))}
-        </div>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* LEFT */}
           <div>
