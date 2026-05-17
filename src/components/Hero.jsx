@@ -9,6 +9,7 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 import image from "../assets/image2.png";
+import { TypeAnimation } from "react-type-animation";
 
 const Hero = ({ darkMode }) => {
   const socialIcons = [
@@ -46,8 +47,8 @@ const Hero = ({ darkMode }) => {
 
   const theme = darkMode ? darkTheme : lightTheme;
 
-  const scrollToContact = () => {
-    const section = document.getElementById("contact");
+  const scrollToProject = () => {
+    const section = document.getElementById("projects");
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -70,8 +71,20 @@ const Hero = ({ darkMode }) => {
             <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-orange-500/10 border border-orange-500/20 rounded-full">
               <Star className="w-4 h-4 text-orange-500" />
               <span className={`text-sm ${theme.textSecondary}`}>
-                MERN Stack Developer | React Enthusiast | Building Real-World
-                Web Applications
+                <TypeAnimation
+                  sequence={[
+                    "MERN Stack Developer",
+                    2000,
+                    "Frontend Developer",
+                    2000,
+                    "Building Scalable Web Apps",
+                    2000,
+                    "React & Node.js Specialist",
+                    2000,
+                  ]}
+                  speed={50}
+                  repeat={Infinity}
+                />
               </span>
             </div>
 
@@ -87,10 +100,10 @@ const Hero = ({ darkMode }) => {
             <div className="flex gap-4 flex-wrap">
               {/* CONTACT BUTTON (FULL ORANGE) */}
               <button
-                onClick={scrollToContact}
+                onClick={scrollToProject}
                 className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg transition"
               >
-                Contact Me
+                See My Work
               </button>
 
               {/* DOWNLOAD CV */}
