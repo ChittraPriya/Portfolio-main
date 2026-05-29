@@ -58,7 +58,7 @@ const Projects = ({ darkMode }) => {
       tech: ["MongoDB", "Express", "React", "Node.js"],
       github: "https://github.com/ChittraPriya/Frontend-Cars",
       image: carImage,
-      live: "#",
+      live: "https://carbookingrent.netlify.app/",
     },
     {
       id: 4,
