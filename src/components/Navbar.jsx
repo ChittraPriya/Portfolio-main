@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, Moon, Sun, X } from "lucide-react";
 const Navbar = ({ darkMode, toggleDarkMode }) => {

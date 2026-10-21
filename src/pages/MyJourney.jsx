@@ -20,9 +20,65 @@ const MyJourney = ({ darkMode }) => {
             💼 Experience
           </h3>
 
-          {/* EXPERIENCE CARD 1 */}
+          {/* EXPERIENCE CARD - GLOARO */}
           <div
             className={`p-6 rounded-xl shadow-lg transition-all duration-300
+            hover:-translate-y-2 hover:scale-[1.02]
+            hover:shadow-2xl hover:shadow-orange-500/20
+            ${darkMode ? "bg-gray-800" : "bg-white"}`}
+          >
+            <h4 className="font-semibold">
+              MERN Stack Developer Intern
+            </h4>
+
+            <p className="text-orange-500">
+              GloAro Pvt Ltd
+            </p>
+
+            <p className="text-sm opacity-70 mb-3">
+              September 2026 – Present · Internship
+            </p>
+
+            <p className="text-sm">
+              Working as a MERN Stack Developer Intern, contributing to
+              real-world web application development using modern frontend
+              and backend technologies. Working on CRM/ERP features, APIs,
+              database integration, authentication/authorization, UI
+              development, bug fixing, testing, and improving existing
+              application functionality.
+            </p>
+          </div>
+
+          {/* EXPERIENCE CARD - PEACOCK INDIA */}
+          <div
+            className={`mt-10 p-6 rounded-xl shadow-lg transition-all duration-300
+            hover:-translate-y-2 hover:scale-[1.02]
+            hover:shadow-2xl hover:shadow-orange-500/20
+            ${darkMode ? "bg-gray-800" : "bg-white"}`}
+          >
+            <h4 className="font-semibold">
+              MERN Stack Developer Intern
+            </h4>
+
+            <p className="text-orange-500">
+              Peacock India Private Limited
+            </p>
+
+            <p className="text-sm opacity-70 mb-3">
+              2 Months · Internship
+            </p>
+
+            <p className="text-sm">
+              Completed a 2-month internship focused on MERN stack
+              development, gaining practical experience in frontend and
+              backend development, API integration, database operations,
+              debugging, and building web application features.
+            </p>
+          </div>
+
+          {/* EXPERIENCE CARD 1 */}
+          <div
+            className={`mt-10 p-6 rounded-xl shadow-lg transition-all duration-300
             hover:-translate-y-2 hover:scale-[1.02]
             hover:shadow-2xl hover:shadow-orange-500/20
             ${darkMode ? "bg-gray-800" : "bg-white"}`}

@@ -1,5 +1,4 @@
 import { Star, Download } from "lucide-react";
-import instagram from "../assets/instagram.png";
 import github from "../assets/github.png";
 import {
   SiExpressdotcom,
@@ -12,21 +11,6 @@ import image from "../assets/image2.png";
 import { TypeAnimation } from "react-type-animation";
 
 const Hero = ({ darkMode }) => {
-  const socialIcons = [
-    {
-      icon: instagram,
-      alt: "Instagram",
-      hover: "hover:bg-red-500",
-      link: "https://instagram.com",
-    },
-    {
-      icon: github,
-      alt: "GitHub",
-      hover: "hover:bg-black",
-      link: "https://github.com",
-    },
-  ];
-
   const darkTheme = {
     textPrimary: "text-white",
     textSecondary: "text-gray-300",
@@ -47,8 +31,8 @@ const Hero = ({ darkMode }) => {
 
   const theme = darkMode ? darkTheme : lightTheme;
 
-  const scrollToProject = () => {
-    const section = document.getElementById("projects");
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -64,7 +48,7 @@ const Hero = ({ darkMode }) => {
             <h1
               className={`text-4xl md:text-6xl font-bold mb-4 ${theme.textPrimary}`}
             >
-              Chittra Priya 👋
+              Chittra Priya
             </h1>
 
             {/* BADGE */}
@@ -75,11 +59,11 @@ const Hero = ({ darkMode }) => {
                   sequence={[
                     "MERN Stack Developer",
                     2000,
-                    "Frontend Developer",
+                    "React & Next.js Developer",
                     2000,
                     "Building Scalable Web Apps",
                     2000,
-                    "React & Node.js Specialist",
+                    "Full Stack Developer",
                     2000,
                   ]}
                   speed={50}
@@ -90,23 +74,20 @@ const Hero = ({ darkMode }) => {
 
             {/* DESCRIPTION */}
             <p className={`mb-8 max-w-xl ${theme.textSecondary}`}>
-              Building modern, responsive, scalable and modern web applications
-              using React.js, Node.js, Express.js, and MongoDB.Passionate about
-              creating user-friendly digital experiences and solving real-world
-              problems through clean code.
+              I build responsive full-stack applications, reusable UI components
+              and AI-powered integrations using React, Next.js, Node.js, Express
+              and MongoDB.
             </p>
 
             {/* BUTTONS */}
-            <div className="flex gap-4 flex-wrap">
-              {/* CONTACT BUTTON (FULL ORANGE) */}
+            <div className="flex gap-3 mb-8 flex-wrap">
               <button
-                onClick={scrollToProject}
+                onClick={() => scrollToSection("projects")}
                 className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg transition"
               >
-                See My Work
+                View Projects
               </button>
 
-              {/* DOWNLOAD CV */}
               <a
                 href="/resume.pdf"
                 target="_blank"
@@ -114,7 +95,51 @@ const Hero = ({ darkMode }) => {
                 className="flex items-center gap-2 border-2 border-orange-500 px-6 py-3 rounded-lg text-orange-500 hover:bg-orange-500 hover:text-white transition"
               >
                 <Download size={18} />
-                Download CV
+                Download Résumé
+              </a>
+
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="bg-white hover:bg-orange-50 text-orange-500 px-6 py-3 rounded-lg transition border-2 border-orange-500"
+              >
+                Contact Me
+              </button>
+            </div>
+
+            {/* SOCIAL LINKS */}
+            <div className="flex gap-2 flex-wrap">
+              <a
+                href="https://github.com/ChittraPriya"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-3 rounded-lg text-white transition hover:bg-black"
+              >
+                <img
+                  src={github}
+                  alt="GitHub"
+                  className="w-5 h-5"
+                />
+                GitHub
+                <span className="sr-only">GitHub</span>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/chittra-priya-k-136b77134/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-3 rounded-lg text-white transition hover:bg-red-500"
+              >
+                <span className="flex -translate-y-0.5 rtl:rotate-180" aria-hidden="true">
+                  <svg
+                    className="w-5 h-5 text-blue-500"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M16 8a6 6 0 0 1 6 6v1H8v-1a6 6 0 0 1 6-6Zm1.116 3.941l1.55 1.55a3.837 3.837 0 0 1-5.363 5.363l-1.55-1.55A9.835 9.835 0 0 0 18 8a9.835 9.835 0 0 0-6.884 1.116l1.065 1.065a3.837 3.837 0 0 1-5.364 5.364l-1.55 1.55A3.838 3.838 0 0 1 5 16a3.838 3.838 0 0 1-1.884-1.884l1.55-1.55A9.835 9.835 0 0 0 3.116 3.116l1.55 1.55a3.837 3.837 0 0 1 5.363 5.363l1.116-1.116ZM8 14a6 6 0 0 0 6 6v1H8v-1a6 6 0 0 0-6-6Zm7.543-5.857a1 1 0 0 1 0 1.414l.707.707a1 1 0 1 1-1.414-1.414l-.707.707a1 1 0 0 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0Z" />
+                  </svg>
+                </span>
+                LinkedIn
+                <span className="sr-only">LinkedIn</span>
               </a>
             </div>
 
@@ -158,9 +183,17 @@ const Hero = ({ darkMode }) => {
           {/* Right Column - Image + Floating Icons */}
           <div className="flex justify-center items-center">
             <div className="relative w-[320px] md:w-[400px] aspect-square">
-              {/* OUTER ROTATING BORDER RING */}
-              <div className="absolute -inset-[3px] rounded-none animate-spin">
-                <div className="w-full h-full bg-[conic-gradient(from_0deg,transparent,orange,transparent,transparent)]"></div>
+              {/* SUBTLE ENTRANCE ANIMATION INSTEAD OF CONTINUOUS SPIN */}
+              <div
+                className="absolute -inset-[3px] rounded-none"
+                style={{
+                  animation: "fadeInUp 0.6s ease-out forwards",
+                }}
+              >
+                <div
+                  className="w-full h-full bg-[conic-gradient(from_0deg,transparent_20%,orange_20%,transparent_20%)]"
+                  style={{ transform: "rotate(-90deg)" }}
+                />
               </div>
 
               {/* INNER MASK (this hides center, keeps only border visible) */}

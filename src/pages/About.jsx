@@ -1,18 +1,15 @@
-import React from "react";
 import { motion } from "framer-motion";
 import {
-  Code2,
   Database,
   Layout,
   Rocket,
   Brain,
-  Laptop,
 } from "lucide-react";
 
 const About = ({ darkMode }) => {
   const stats = [
     { value: "10+", label: "Technologies" },
-    { value: "5+", label: "MERN Projects" },
+    { value: "7+", label: "MERN Projects" },
     { value: "500+", label: "Hours Coding" },
     { value: "100%", label: "Learning Mindset" },
   ];
